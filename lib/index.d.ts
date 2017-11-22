@@ -37,6 +37,9 @@ declare const HLTV: {
     getTeamStats: ({id}: {
         id: number;
     }) => Promise<FullTeamStats>;
+    getPlayer: ({id}: {
+        id: number;
+    }) => Promise<FullPlayer>;
 };
 export default HLTV;
 export { HLTV };
@@ -55,4 +58,5 @@ import Thread from './models/Thread';
 import Map from './enums/Map';
 import FullTeam from './models/FullTeam';
 import FullTeamStats from './models/FullTeamStats';
-export { FullMatch, FullMatchMapStats, Map, FullStream, LiveMatch, LogUpdate, ScoreboardUpdate, TeamRanking, UpcomingMatch, MatchResult, MatchStats, MatchType, Thread, FullTeam, FullTeamStats };
+import FullPlayer from './models/FullPlayer';
+export { FullMatch, FullMatchMapStats, Map, FullStream, LiveMatch, LogUpdate, ScoreboardUpdate, TeamRanking, UpcomingMatch, MatchResult, MatchStats, MatchType, Thread, FullTeam, FullTeamStats, FullPlayer };
