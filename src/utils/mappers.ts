@@ -12,8 +12,8 @@ require('dotenv').config()
 const rp = require('request-promise');
 const proxy = process.env.PROXY
 
-export const fetchPage = async (url: string) => cheerio.load(await rp.get(
-    {
+export const fetchPage = async (url: string) => {
+    let html = await rp.get({
         url: url,
         timeout: 20000,  // 15s
         proxy: proxy
@@ -21,7 +21,11 @@ export const fetchPage = async (url: string) => cheerio.load(await rp.get(
         return body;
     }).catch(err => {
         console.log(err.message, err.options.url, err.options.timeout, err.options.proxy)
-}))
+    })
+    if (html === undefined)
+        throw new Error('Html is undefined')
+    return cheerio.load(html)
+}
 
 export const toArray = (elements: Cheerio): Cheerio[] => elements.toArray().map(cheerio)
 export const getMapSlug = (map: string): MapSlug => MapSlug[map]
