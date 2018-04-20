@@ -40,6 +40,7 @@ declare const HLTV: {
     getPlayer: ({id}: {
         id: number;
     }) => Promise<FullPlayer>;
+    getRanking: () => Promise<TeamRank[]>;
 };
 export default HLTV;
 export { HLTV };
@@ -59,4 +60,5 @@ import Map from './enums/Map';
 import FullTeam from './models/FullTeam';
 import FullTeamStats from './models/FullTeamStats';
 import FullPlayer from './models/FullPlayer';
-export { FullMatch, FullMatchMapStats, Map, FullStream, LiveMatch, LogUpdate, ScoreboardUpdate, TeamRanking, UpcomingMatch, MatchResult, MatchStats, MatchType, Thread, FullTeam, FullTeamStats, FullPlayer };
+import TeamRank from "./models/TeamRank";
+export { FullMatch, FullMatchMapStats, Map, FullStream, LiveMatch, LogUpdate, ScoreboardUpdate, TeamRanking, UpcomingMatch, MatchResult, MatchStats, MatchType, Thread, FullTeam, FullTeamStats, FullPlayer, TeamRank };

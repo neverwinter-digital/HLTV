@@ -14,6 +14,7 @@ import getTeamRanking from './endpoints/getTeamRanking'
 import getTeam from './endpoints/getTeam'
 import getTeamStats from './endpoints/getTeamStats'
 import getPlayer from './endpoints/getPlayer'
+import getRanking from './endpoints/getRanking'
 
 // define object and do some export
 const HLTV = {
@@ -28,7 +29,8 @@ const HLTV = {
     getTeamRanking,
     getTeam,
     getTeamStats,
-    getPlayer
+    getPlayer,
+    getRanking
 }
 export default HLTV
 export { HLTV }
@@ -50,9 +52,10 @@ import Map from './enums/Map'
 import FullTeam from './models/FullTeam'
 import FullTeamStats from './models/FullTeamStats'
 import FullPlayer from './models/FullPlayer'
+import TeamRank from "./models/TeamRank"
 export {
     FullMatch, FullMatchMapStats, Map, FullStream, LiveMatch,
     LogUpdate, ScoreboardUpdate, TeamRanking, UpcomingMatch,
     MatchResult, MatchStats, MatchType, Thread, FullTeam, FullTeamStats,
-    FullPlayer
+    FullPlayer, TeamRank
 }
